@@ -1,0 +1,18 @@
+# Enforce HTTPS with HSTS
+Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+
+# Prevent Clickjacking with X-Frame-Options
+Header always set X-Frame-Options "DENY"
+
+# Additional Clickjacking protection with Content-Security-Policy
+Header always set Content-Security-Policy "frame-ancestors 'self';"
+
+# Other security headers (optional, recommended for better protection)
+Header always set X-Content-Type-Options "nosniff"
+Header always set X-XSS-Protection "1; mode=block"
+Header always set Referrer-Policy "no-referrer-when-downgrade"
+Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+
+# ✅ Custom Error Page Handling
+ErrorDocument 404 /error_page.html
+ErrorDocument 500 /error_page.html

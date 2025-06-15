@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Register - Lan Bakery</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <style>
+        .error-message {
+            color: red;
+            font-size: 0.85rem;
+            padding-top: 4px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="limiter">
+<div class="container-login100" style="background: url('images/background.jpg') no-repeat center center; background-size: cover;">
+        <div class="wrap-login100">
+            <div class="login100-pic js-tilt" data-tilt>
+                <img src="images/footer-logo-1.png" alt="IMG">
+            </div>
+            <form class="login100-form validate-form" action="register.php" method="POST" id="registerForm">
+                <span class="login100-form-title">Member Register</span>
+
+                <!-- First Name -->
+                <div class="wrap-input100 validate-input" data-validate="First name is required">
+                    <input class="input100" type="text" name="first_name" placeholder="First Name" maxlength="30" required pattern="[A-Za-z\s]+" title="Letters only">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100"><i class="fa fa-user" aria-hidden="true"></i></span>
+                    <div class="error-message" id="first_name_error">Enter a valid first name (letters only).</div>
+                </div>
+
+                <!-- Last Name -->
+                <div class="wrap-input100 validate-input" data-validate="Last name is required">
+                    <input class="input100" type="text" name="last_name" placeholder="Last Name" maxlength="30" required pattern="[A-Za-z\s]+" title="Letters only">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100"><i class="fa fa-user" aria-hidden="true"></i></span>
+                    <div class="error-message" id="last_name_error">Enter a valid last name (letters only).</div>
+                </div>
+
+                <!-- Username -->
+                <div class="wrap-input100 validate-input" data-validate="Username is required">
+                    <input class="input100" type="text" name="username" placeholder="Username" maxlength="20" required pattern="^[a-zA-Z0-9_]{4,20}$" title="4-20 characters, letters/numbers/underscores only">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100"><i class="fa fa-user" aria-hidden="true"></i></span>
+                    <div class="error-message" id="username_error">Username must be 4–20 characters and contain only letters, numbers, or underscores.</div>
+                </div>
+
+                <!-- Email -->
+                <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                    <input class="input100" type="email" name="email" placeholder="Email" maxlength="50" required>
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                    <div class="error-message" id="email_error">Enter a valid email address.</div>
+                </div>
+
+                <!-- Password -->
+                <div class="wrap-input100 validate-input" data-validate="Password is required">
+                    <input class="input100" type="password" name="pass" placeholder="Password" minlength="8" maxlength="50" autocomplete="off" required>
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100"><i class="fa fa-lock" aria-hidden="true"></i></span>
+                    <div class="error-message" id="password_error">Password must be at least 8 characters long.</div>
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="wrap-input100 validate-input" data-validate="Confirm password is required">
+                    <input class="input100" type="password" name="confirm_pass" placeholder="Confirm Password" minlength="8" maxlength="50" autocomplete="off" required>
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100"><i class="fa fa-lock" aria-hidden="true"></i></span>
+                    <div class="error-message" id="confirm_pass_error">Passwords do not match.</div>
+                </div>
+
+                <div class="container-login100-form-btn">
+                    <button class="login100-form-btn" type="submit">Register</button>
+                </div>
+
+                <div class="text-center p-t-12">
+                    <a class="txt2" href="login.html">Already have an account? Login
+                        <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<script>
+    document.getElementById('registerForm').addEventListener('submit', function(e) {
+        let valid = true;
+
+        const showError = (id, condition) => {
+            const el = document.getElementById(id);
+            el.style.display = condition ? "block" : "none";
+            if (condition) valid = false;
+        };
+
+        const form = e.target;
+        const first_name = form.first_name.value.trim();
+        const last_name = form.last_name.value.trim();
+        const username = form.username.value.trim();
+        const email = form.email.value.trim();
+        const pass = form.pass.value;
+        const confirm_pass = form.confirm_pass.value;
+
+        showError('first_name_error', !/^[A-Za-z\s]{1,30}$/.test(first_name));
+        showError('last_name_error', !/^[A-Za-z\s]{1,30}$/.test(last_name));
+        showError('username_error', !/^[a-zA-Z0-9_]{4,20}$/.test(username));
+        showError('email_error', !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email));
+        showError('password_error', pass.length < 8);
+        showError('confirm_pass_error', pass !== confirm_pass);
+
+        if (!valid) e.preventDefault();
+    });
+</script>
+<script src="vendor/bootstrap/js/popper.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="vendor/select2/select2.min.js"></script>
+<script src="js/main.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll("form#registerForm input").forEach(function(input) {
+            input.setAttribute("autocomplete", "off");
+        });
+    });
+</script>
+
+</body>
+</html>
+
