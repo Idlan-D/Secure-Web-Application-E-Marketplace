@@ -55,7 +55,7 @@ The result is a **functional and secure e-marketplace** application capable of w
 ## 🚀 Live Demo
 
 🌐 Hosted on **Hostinger**  
-[Visit Live Site](lanbakery.shop)
+[Visit Live Site](https://www.lanbakery.shop)
 
 ---
 
