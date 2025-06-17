@@ -45,9 +45,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email']) && isset($_PO
 
     // Check reCAPTCHA response
     $recaptcha_secret = "6Lf-LEgrAAAAAHD0nLruj03Tu51TgoDDgVLw8Z-T";
-    $recaptcha_response = $_POST['g-recaptcha-response'];
-    $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$recaptcha_secret&response=$recaptcha_response");
-    $response_keys = json_decode($response, true);
+$recaptcha_response = $_POST['g-recaptcha-response'] ?? '';
+
+// Validate reCAPTCHA token format: only letters, numbers, dash, underscore allowed
+if (!preg_match('/^[a-zA-Z0-9_-]+$/', $recaptcha_response)) {
+    echo "Invalid reCAPTCHA response.";
+    exit();
+}
+
+$response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$recaptcha_secret&response=$recaptcha_response");
+$response_keys = json_decode($response, true);
+
 
     if (intval($response_keys["success"]) !== 1) {
         echo "Please complete the CAPTCHA.";
