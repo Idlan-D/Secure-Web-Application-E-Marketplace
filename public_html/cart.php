@@ -2,11 +2,11 @@
 session_start();
 
 // Database connection
-$servername = "127.0.0.1";
-$username = "u875650075_idlan";
-$password = "Idlan@123";
-$dbname = "u875650075_idlan_database";
-$port = 3306;
+$servername = "...";
+$username = "...";
+$password = "...";
+$dbname = "...";
+$port = ...;
 
 try {
     $conn = new PDO("mysql:host=$servername;port=$port;dbname=$dbname", $username, $password);

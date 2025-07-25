@@ -7,11 +7,11 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 // Database configuration
-$servername = "127.0.0.1";
-$db_username = "u875650075_idlan";
-$db_password = "Idlan@123";
-$dbname = "u875650075_idlan_database";
-$port = 3306;
+$servername = "...";
+$db_username = "...";
+$db_password = "...";
+$dbname = "...";
+$port = ...;
 
 // Include Composer's autoload file
 require_once '/home/u428930445/vendor/autoload.php'; // Adjust path if needed

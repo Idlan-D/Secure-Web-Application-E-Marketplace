@@ -13,11 +13,11 @@ if (empty($_SESSION['csrf_token'])) {
 }
 
 // Database connection
-$servername = "127.0.0.1";
-$db_username = "u875650075_idlan";
-$db_password = "Idlan@123";
-$dbname = "u875650075_idlan_database";
-$port = 3306;
+$servername = "...";
+$db_username = "...";
+$db_password = "...";
+$dbname = "...";
+$port = ...;
 
 $conn = new mysqli($servername, $db_username, $db_password, $dbname, $port);
 if ($conn->connect_error) {
@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email']) && isset($_PO
     }
 
     // Check reCAPTCHA response
-    $recaptcha_secret = "6Lf-LEgrAAAAAHD0nLruj03Tu51TgoDDgVLw8Z-T";
+    $recaptcha_secret = "...";
 $recaptcha_response = $_POST['g-recaptcha-response'] ?? '';
 
 // Validate reCAPTCHA token format: only letters, numbers, dash, underscore allowed
@@ -154,12 +154,12 @@ $response_keys = json_decode($response, true);
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'dprince.ismail@gmail.com';
-        $mail->Password = 'gipy tzuh nmqy izgn';
+        $mail->Username = 'email';
+        $mail->Password = '...';
         $mail->SMTPSecure = 'tls';
         $mail->Port = 587;
 
-        $mail->setFrom('dprince.ismail@gmail.com', 'Lan Bakery');
+        $mail->setFrom('email', 'Lan Bakery');
         $mail->addAddress($email);
 
         $mail->isHTML(true);

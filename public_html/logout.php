@@ -10,7 +10,7 @@ if (isset($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] === true
         $user_id = $_SESSION['mfa_user_id'];
 
         // Connect to DB
-        $conn = new mysqli("127.0.0.1", "u875650075_idlan", "Idlan@123", "u875650075_idlan_database", 3306);
+        $conn = new mysqli("...", "...", "...", "...", ...);
         if (!$conn->connect_error) {
             // Clear current session ID in DB for admin
             $stmt = $conn->prepare("UPDATE users SET current_session_id = NULL WHERE user_id = ?");
@@ -26,7 +26,7 @@ if (isset($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] === true
         $user_id = $_SESSION['mfa_user_id'];
 
         // Connect to DB
-        $conn = new mysqli("127.0.0.1", "u875650075_idlan", "Idlan@123", "u875650075_idlan_database", 3306);
+        $conn = new mysqli("...", "...", "...", "...", ...);
         if (!$conn->connect_error) {
             // Clear current session ID in DB for regular user
             $stmt = $conn->prepare("UPDATE users SET current_session_id = NULL WHERE user_id = ?");

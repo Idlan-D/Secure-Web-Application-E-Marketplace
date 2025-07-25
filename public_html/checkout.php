@@ -7,11 +7,11 @@ if (empty($_SESSION['csrf_token'])) {
 }
 
 // Database connection
-$servername = "127.0.0.1";
-$db_username = "u875650075_idlan";
-$db_password = "Idlan@123";
-$dbname = "u875650075_idlan_database";
-$port = 3306;
+$servername = "...";
+$db_username = "...";
+$db_password = "...";
+$dbname = "...";
+$port = ...;
 
 try {
     $pdo = new PDO("mysql:host=$servername;port=$port;dbname=$dbname;charset=utf8mb4", $db_username, $db_password);
@@ -106,7 +106,7 @@ try {
 }
 
         if ($payment_gateway_active) {
-            $api_key = "wi9rjbdu-e46l-h8hd-gsjy-zrdy1mxp5l8i";
+            $api_key = "...";
             $category_code = "q9gkxge1";
             $bill_reference = 'Order_' . uniqid();
 

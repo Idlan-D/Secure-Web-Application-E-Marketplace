@@ -9,11 +9,11 @@ use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
 
 // Database configuration
-$servername = "127.0.0.1";
-$db_username = "u875650075_idlan";  // use your database username
-$db_password = "Idlan@123";      // use your database password
-$dbname = "u875650075_idlan_database"; // use your database name
-$port = 3306;           // specify the port number
+$servername = "...";
+$db_username = "...";  // use your database username
+$db_password = "...";      // use your database password
+$dbname = "..."; // use your database name
+$port = ...;           // specify the port number
 
 // Create connection
 $conn = new mysqli($servername, $db_username, $db_password, $dbname, $port);
@@ -113,14 +113,14 @@ function sendVerificationEmail($email, $verification_code, $first_name) {
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'dprince.ismail@gmail.com'; // Your Gmail username
-        $mail->Password = 'gipy tzuh nmqy izgn';   // Your Gmail password
+        $mail->Username = 'email'; // Your Gmail username
+        $mail->Password = '...';   // Your Gmail password
         $mail->SMTPSecure = 'tls';
         $mail->Port = 587;
         $mail->SMTPAutoTLS = false;  // Disable automatic TLS encryption if needed
 
         // Recipients
-        $mail->setFrom('dprince.ismail@gmail.com', 'Lan Bakery');
+        $mail->setFrom('email', 'Lan Bakery');
         $mail->addAddress($email);
 
         // Content (with XSS prevention using htmlspecialchars)

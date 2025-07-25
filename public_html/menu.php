@@ -103,7 +103,7 @@
                 <!-- Fetching and displaying product data from the database -->
                 <?php
                 // Database connection
-                $pdo = new PDO('mysql:host=127.0.0.1;port=3306;dbname=u875650075_idlan_database', 'u875650075_idlan', 'Idlan@123');
+                $pdo = new PDO('mysql:host=...;port=...;dbname=...', '...', '...');
 
                 // Fetch product data from the database
                 $stmt = $pdo->query("SELECT name, price, image_url FROM items");

@@ -1,10 +1,10 @@
 <?php
 // Toyyibpay callback to confirm payment
-$servername = "127.0.0.1";
-$db_username = "u875650075_idlan";
-$db_password = "Idlan@123";
-$dbname = "u875650075_idlan_database";
-$port = 3306;
+$servername = "...";
+$db_username = "...";
+$db_password = "...";
+$dbname = "...";
+$port = ...6;
 $pdo = new PDO("mysql:host=$servername;port=$port;dbname=$dbname", $db_username, $db_password);
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 

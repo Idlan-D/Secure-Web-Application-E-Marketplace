@@ -2,7 +2,7 @@
 session_start();
 require 'vendor/autoload.php';
 
-$conn = new mysqli("127.0.0.1", "u875650075_idlan", "Idlan@123", "u875650075_idlan_database", 3306);
+$conn = new mysqli("...", "...", "...", "...", ...);
 if ($conn->connect_error) die("DB Error");
 
 $email = $_POST['email'] ?? '';
@@ -47,12 +47,12 @@ try {
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
-    $mail->Username = 'dprince.ismail@gmail.com';
-    $mail->Password = 'gipy tzuh nmqy izgn';
+    $mail->Username = 'email';
+    $mail->Password = '...';
     $mail->SMTPSecure = 'tls';
     $mail->Port = 587;
 
-    $mail->setFrom('dprince.ismail@gmail.com', 'Lan Bakery');
+    $mail->setFrom('email', 'Lan Bakery');
     $mail->addAddress($email);
     $mail->Subject = 'Your Password Has Been Changed';
     $mail->Body = "Hi, your password has just been changed. If this wasn't you, please contact support immediately.";

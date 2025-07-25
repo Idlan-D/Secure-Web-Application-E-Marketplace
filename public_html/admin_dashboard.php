@@ -11,7 +11,7 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
 // Database connection
-$conn = new mysqli("127.0.0.1", "u875650075_idlan", "Idlan@123", "u875650075_idlan_database", 3306);
+$conn = new mysqli(...);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }

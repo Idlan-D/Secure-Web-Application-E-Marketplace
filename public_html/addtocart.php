@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["product_name"], $_POS
     $_SESSION['cart'][] = $cart_item;
 
     // ✅ Log the action into the database
-    $conn = new mysqli("127.0.0.1", "u875650075_idlan", "Idlan@123", "u875650075_idlan_database", 3306);
+    $conn = new mysqli(...);
     if ($conn->connect_error) {
         echo json_encode(array("success" => false, "message" => "Database connection failed."));
         exit;

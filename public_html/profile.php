@@ -2,11 +2,11 @@
 session_start();
 
 // Database configuration
-$servername = "127.0.0.1";
-$db_username = "u875650075_idlan";
-$db_password = "Idlan@123";
-$dbname = "u875650075_idlan_database";
-$port = 3306;
+$servername = "...";
+$db_username = "...";
+$db_password = "...";
+$dbname = "...";
+$port = ...;
 
 // Create connection
 $conn = new mysqli($servername, $db_username, $db_password, $dbname, $port);
